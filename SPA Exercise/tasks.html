@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Task Manager</title>
+    <meta charset="UTF-8" />
+
+<link rel="stylesheet" href="src/styles.css">
+<script type="text/javascript" src="src/taskMethod.js"></script>
+
+  </head>
+
+  <body>
+
+<h2>User Task Manager</h2>
+
+<div style="position:absolute; height:260px; width:300px; overflow:hidden;">
+<div id="myDiv" style="width:250px; height:255px; border:1px solid darkblue;">
+<div style="margin-left:10px; margin-top:10px; line-height:20px">
+<b>Name:<br>
+  <input type="text" id="Name" value="">
+  <br>
+  Description:<br>
+  <input type="text" id="Description" value="">
+  <br>
+  Estimate:<br>
+  <input type="text" id="Estimate" value="">
+  <br>
+  State:<br></b>
+  <select id="State" size="3">
+    <option value="Planned">Planned</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+  </select>
+  <br> <div style="line-height:35px">
+  <input type="submit" onclick=printTask() value="Create New Task"></div>
+</div>
+</div>
+<div style="width:1000px; height:1000px;"></div>
+</div>
+
+<div style="float:right; height:260px; width:900px; overflow:hidden;">
+<div id="myDiv2" style="width:850px; height:255px; border:1px solid darkblue;">
+<table id="lookup">
+  <tr>
+	<th>Task Name</th>
+	<th>Estimate (in hours)</th>
+	<th>State</th>
+  </tr>
+  <tr>
+	<th></th>
+	<th></th>
+	<th>Planned</th>
+  </tr>
+  <tr>
+	<th></th>
+	<th></th>
+	<th>In Progress</th>
+  </tr>
+  <tr>
+	<th></th>
+	<th></th>
+	<th>Completed</th>
+  </tr>
+	<th>Update Task</th>
+	<th><input type="text" id="updateEst" value="0"> hours required to complete state</th>
+	<th>
+<select id="updateState" size="3">
+    <option value="Planned">Planned</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+</select>
+	</th>
+  <tr>
+  </tr>
+</table>
+<div style="text-align: center; margin-top:10px; postion:absolute">
+<button onclick="updateTask(this)">Update</button>
+</div>
+</div>
+<div style="width:1000px; height:1000px;"></div>
+</div>
+
+<br>
+<p style="margin-top:260px; font-weight:bold; font-size:20px">List of Tasks</p>
+<table id="tasks">
+  <tr>
+    <th>Task Name</th>
+    <th>Description</th>
+    <th>Estimate (in hours)</th>
+    <th>Current State</th>
+    <td> </td>
+  </tr>
+</table>
+
+  </body>
+</html>
